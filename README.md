@@ -2,6 +2,12 @@
 
 A modern YouTube clone built with React.js, Material-UI, and Vite. This application replicates core YouTube functionality including video browsing, search, and video playback.
 
+## 🌐 Live Demo
+
+**[View Live Application](https://dariogeorge21.github.io/react-youtube-clone/)**
+
+The application is deployed on GitHub Pages and fully functional!
+
 ## 🚀 Features
 
 - **Video Listing**: Browse videos in a responsive grid layout
@@ -144,16 +150,45 @@ The application uses Material-UI's theming system with:
 
 ## 🚀 Deployment
 
+This project is automatically deployed to GitHub Pages. The deployment process:
+
+### GitHub Pages Deployment (Current)
+
 1. **Build the project**
    ```bash
    npm run build
    ```
 
-2. **Deploy the `dist` folder** to your preferred hosting service:
-   - Vercel
-   - Netlify
-   - GitHub Pages
-   - Firebase Hosting
+2. **Deploy to gh-pages branch**
+   ```bash
+   # Switch to gh-pages branch
+   git checkout -b gh-pages
+
+   # Copy built files to root
+   cp -r dist/* .
+
+   # Remove source files and commit built files
+   git rm -rf src public package.json package-lock.json vite.config.js eslint.config.js
+   git add index.html assets/ vite.svg
+   git commit -m "Deploy to GitHub Pages"
+
+   # Push to GitHub
+   git push origin gh-pages
+   ```
+
+3. **Enable GitHub Pages**
+   - Go to repository Settings → Pages
+   - Select "Deploy from a branch"
+   - Choose "gh-pages" branch
+   - The app will be available at: `https://dariogeorge21.github.io/react-youtube-clone/`
+
+### Alternative Deployment Options
+
+Deploy the `dist` folder to your preferred hosting service:
+- Vercel
+- Netlify
+- Firebase Hosting
+- Surge.sh
 
 ## 🔮 Future Enhancements
 
